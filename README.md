@@ -1,6 +1,6 @@
-= Adjustable **Re**orbital: Print-in-place Lamp
+# Adjustable *Re*orbital: Print-in-place Lamp
 
-This model reimplements the https://www.prusaprinters.org/prints/41007-orbital-structural-printing-print-in-place-lamp[Orbital] lampshade that won Prusa Printers' competition in 2020, but with three changes:
+This model reimplements the [Orbital](https://www.prusaprinters.org/prints/41007-orbital-structural-printing-print-in-place-lamp) lampshade that won Prusa Printers' competition in 2020, but with three changes:
 
 1. This implementation uses OpenSCAD, so the parameters maybe adjusted.  The height and number of sides is straightforward.
 
@@ -8,12 +8,12 @@ This model reimplements the https://www.prusaprinters.org/prints/41007-orbital-s
 
 3. The original model has some very minor flaws leading to defects (incorrect sequence of the inner star shape; it is sometimes with the circles and sometimes with the outer star shape).  These are no longer present.
 
-![./img/straight-reorbital.png](Straight)
-![./img/zigzag-reorbital.png](Zig-zag)
-![./img/bulge-reorbital.png](Bulge)
-![./img/curves-reorbital.png](Curves)
+![Straight](./img/straight-reorbital.png)
+![Zig-zag](./img/zigzag-reorbital.png)
+![Bulge](./img/bulge-reorbital.png)
+![Curves](./img/curves-reorbital.png)
 
-== Model generation
+## Model generation
 
 The main code is in [reorbital.scad](./reorbital.scad), and four example files produce different styles:
 
@@ -32,13 +32,13 @@ When changing the parameters, consider:
 * Different filament will also change this, e.g. transparent PETG vs a natural PLA
 * Rapid slope changes might make an unreliable or impossible print
 
-== Seam locations
+## Seam locations
 
 *This may no longer be necessary with current slicers.*
 
 For the best results, configure the seams (starts and ends of each layer's printing) to be in a set location.
 
-To do this, generate the model as a multi-part 3MF file using https://github.com/jschobben/colorscad[ColorSCAD]:
+To do this, generate the model as a multi-part 3MF file using [ColorSCAD](https://github.com/jschobben/colorscad):
 
 ```sh
 colorscad.sh -i orbital.scad -o orbital-with-seams.3mf
@@ -60,7 +60,7 @@ Repack the file, and the painted seams should then show up in PrusaSlicer.
 
 An alternative to using ColorSCAD is to comment out and render each part (lamp + seams) separately, combine them in PrusaSlicer, then modify as above.
 
-== Print settings (Prusa)
+## Print settings (Prusa)
 
 Using the PrusaSlicer defaults:
 
@@ -76,7 +76,7 @@ Using the PrusaSlicer defaults:
 
 Reducing the speed, acceleration and jerk is supposed to stop the print from wobbling — the lamp is like a large spring once it reaches a certain height. The non-print move speed is the most important.
 
-== Print settings (Bambu)
+## Print settings (Bambu)
 
 Using the Bambu Slicer defaults:
 
