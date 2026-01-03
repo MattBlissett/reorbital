@@ -1,0 +1,9 @@
+# Unpacked 3MF files
+*.model
+*.xml
+.rels
+
+*.gcode
+*.gcode.*
+
+*.zip
